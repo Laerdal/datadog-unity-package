@@ -188,6 +188,22 @@ namespace Datadog.Unity
         /// </summary>
         Rare,
     }
+    
+    /// <summary>
+    /// The time at which the SDK should be initialized.
+    /// </summary>
+    public enum InitializationTime
+    {
+        /// <summary>
+        /// The SDK will initialize as soon as possible.
+        /// </summary>
+        Immediate,
+
+        /// <summary>
+        /// The SDK must be initialized manually.
+        /// </summary>
+        Manual
+    }
 
     [Serializable]
     public class FirstPartyHostOption
@@ -217,6 +233,7 @@ namespace Datadog.Unity
 
         // Base Config
         public bool Enabled;
+        public InitializationTime InitializationTime = InitializationTime.Immediate;
         public CoreLoggerLevel SdkVerbosity = CoreLoggerLevel.Warn;
         public bool OutputSymbols;
         public bool PerformNativeStackMapping = true;

@@ -232,7 +232,7 @@ namespace Datadog.Unity.Rum
                     {
                         // This webrequest was disposed before the operation completed. This is not a telemetry
                         // error, but we should stop the resource.
-                        DatadogSdk.Instance.Rum.StopResourceWithError(rumKey, "RequestDisposed", error);
+                        DatadogSdk.Instance.Rum.StopResourceWithError(rumKey, "RequestDisposed", null);
                     }
                     catch (Exception e)
                     {
